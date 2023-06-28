@@ -1,16 +1,17 @@
 # weather_app
 
-A new Flutter project.
+A new Flutter project for getting weather information from the API https://openweathermap.org
 
-## Getting Started
+## Steps before running
 
-This project is a starting point for a Flutter application.
+Step 1: To run the project get your API key from "https://openweathermap.org/api"
 
-A few resources to get you started if this is your first Flutter project:
+Step 2: Create a .env file in the root of the project
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Step 3: Add your key in key-value pair with same key name for instance see step 4
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Step 4: OPEN_WEATHER_KEY = TEST#123
+
+Step 5: run the command "flutter pub run build_runner build --delete-conflicting-outputs"
+
+Step 6: Done

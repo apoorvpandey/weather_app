@@ -4,6 +4,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:http/http.dart' as http;
+import 'package:weather_app/constants/strings.dart';
 
 void main() {
   runApp(const MyApp());
@@ -64,11 +65,13 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
   }
 
   Future<dynamic> fetchWeatherData(String cityName) async {
-    const apiKey = '67fcd0f03bd6d3feb6f26d6e9f413601';
     const apiUrl = 'api.openweathermap.org', endPoint = 'data/2.5/weather';
 
-    final response = await http.get(Uri.https(
-        apiUrl, endPoint, {'q': cityName, 'appid': apiKey, 'units': 'metric'}));
+    final response = await http.get(Uri.https(apiUrl, endPoint, {
+      'q': cityName,
+      'appid': Strings.openWeatherApiKey,
+      'units': 'metric'
+    }));
     if (response.statusCode == 200) {
       return jsonDecode(response.body);
     } else {
